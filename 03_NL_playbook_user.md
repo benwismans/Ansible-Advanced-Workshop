@@ -16,7 +16,7 @@ In het playbook gaan we de module ``authorized_key`` gebruiken om de SSH public 
 
 ``$ vi workshop.yml``
 
-* Vul het playbook met:
+* Vul het playbook met (verander {{ ANSIBLE_USER }} naar de User waarmee je connecteert):
 
 ```
 ---
