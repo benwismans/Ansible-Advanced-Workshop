@@ -6,7 +6,7 @@ In de praktijk wordt vaak elke waarde in een configfile in een variable gezet. D
 
 ### Task 9.1: Default variablen definiëren
 
-We gaan de configfile van de role uit link:08_NL_role_create[Lab 8] ombouwen naar een template.
+We gaan de configfile van de role uit [Lab 8] ombouwen naar een template.
 
 * Ga naar de directory van de role ``chrony``:
 ```
