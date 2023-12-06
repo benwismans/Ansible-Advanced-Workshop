@@ -70,13 +70,13 @@ web1                       : ok=5    changed=0    unreachable=0    failed=0    s
 web2                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
 
-* Open via je webbrowser de URL van de eerste webserver: http://{{ <hostname2> }}.
+* Open via je webbrowser de URL van de eerste webserver: http://{{ <web1> }}.
 * Controleer of de hostname in de pagina correct is:
 
-``This is server {{ <hostname2> }}``
+``This is server {{ <web1> }}``
 
 
-* De tweede webserver: http://{{ <hostname3> }}:
-``This is server {{ ANSIBLE_CLIENT_2 }}``
+* De tweede webserver: http://{{ <web2> }}:
+``This is server {{ web2 }}``
 
 Volgende Stap: [Lab 6 Role - HA Proxy](06_NL_role_haproxy.md)
