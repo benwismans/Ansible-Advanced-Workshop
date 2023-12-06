@@ -48,7 +48,7 @@ web2                       : ok=1    changed=0    unreachable=0    failed=1    s
 
 Als je goed kijkt naar de foutmeldingen, dan lijkt het er op dat er een rechten probleem is. Wanneer je de packages met ``yum`` zou installeren, zou je daar ``sudo`` voor gebruiken. Met Ansible is dat eigenlijk niet anders. Om de packages te installeren, zullen we Ansible moeten instrueren om ``sudo`` te gebruiken.
 
-**TIP:**  Naast ``sudo`` ondersteund Ansible ook andere methoden om meer rechten te verkrijgen. Zie https://docs.ansible.com/ansible/latest/user_guide/become.html.
+**TIP:**  Naast ``sudo`` ondersteunt Ansible ook andere methoden om meer rechten te verkrijgen. Zie https://docs.ansible.com/ansible/latest/user_guide/become.html.
 
 ### Task 4.2: Task met sudo rechten starten
 
