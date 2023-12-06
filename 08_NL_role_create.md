@@ -132,7 +132,7 @@ De laatste stap is het aanmaken van de tasks. Dit werkt vergelijkbaar met de ``t
 
 ### Task 8.6: Playbook
 
-* Maak een nieuw playbook ``chrony.yml`` om de role uit te voeren. Kijk terug in [Lab 6 Role - HAProxy] hoe je een playbook met een role maakt.
+* Maak een nieuw playbook ``chrony.yml`` om de role uit te voeren. Kijk terug in [[Lab 6 Role - HAProxy] hoe je een playbook met een role maakt.
 
 **[NOTE]**
 Je was bezig in de directory ``~/.ansible/roles``. Let er op dat je eerst weer naar je home directory gaat voordat je het playbook aanmaakt.
