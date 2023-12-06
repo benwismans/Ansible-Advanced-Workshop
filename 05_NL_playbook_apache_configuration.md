@@ -43,7 +43,7 @@ TIP: Bekijk ook zeker de documentie van de modules: https://docs.ansible.com/ans
 
 ### Task 5.2: Webpagina index.html installeren
 
-Om de webservers daadwerkelijk wat te laten zien, maken we een index.html in de default webserver root (``/var/www/html``). Om later onderscheid te kunnen maken tussen web1 en web2 gebruiken we de variable ``{{ FQDN }}``. 
+Om de webservers daadwerkelijk wat te laten zien, maken we een index.html in de default webserver root (``/var/www/html``). Om later onderscheid te kunnen maken tussen web1 en web2 gebruiken we de variable ``{{ ansible_fqdn }}``. 
 
 * Vul het playbook ``webservers.yml`` aan met:
 
