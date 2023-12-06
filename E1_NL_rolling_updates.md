@@ -28,7 +28,7 @@ Status OK
       url: "http://{{ ansible_host }}/status.html"
       status_code: 200
 ```
-**TIP:** De bovenstaande taak wordt onder de speciale module ``local_action`` uitgevoerd. Het opvragen van de URL wordt dus vanuit de bastion server uitgevoerd. 
+**TIP:** De bovenstaande taak wordt onder de speciale module ``local_action`` uitgevoerd. Het opvragen van de URL wordt dus vanuit de ansible server uitgevoerd. 
 
 * Voeg toe aan je playbook:
 ```
