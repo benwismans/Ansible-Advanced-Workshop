@@ -15,8 +15,7 @@ De Windows VM is via RDP bereikbaar. Gebruik daarvoor de volgende gegevens:
 De Windows VM moet natuurlijk toegevoegd worden aan de inventory file. Voor Windows zijn er enkele extra parameters nodig om er voor te zorgen dat Ansible ``winrm`` gebruikt in plaats van ``SSH``.
 
 * Voeg toe aan je ``inventory`` file:
-+
-[source,role=copypaste]
+```
 ----
 [windows]
 win ansible_host={{ ANSIBLE_CLIENT_4 }}
@@ -25,12 +24,11 @@ win ansible_host={{ ANSIBLE_CLIENT_4 }}
 ansible_connection=winrm
 ansible_winrm_server_cert_validation=ignore
 ----
-+
+```
 TIP: Voor Windows dient de ``ansible_connection`` aangepast te worden naar winrm (Windows Remote Management). De WinRM module gebruikt SSL om de verbinding te beveiligen. Het SSL certificaat dient dan wel vertrouwd te worden. In een enterprise omgeving is meestal een PKI infrastructuur aanwezig, waardoor alleen het root certificaat geïnstalleerd hoeft te worden. Alle certificaten, ondertekend met dit root certificaat, worden daarmee automatisch vertrouwd. In deze workshop hebben we geen PKI. We schakelen daarom de verificatie uit met de variable ``ansible_winrm_server_cert_validation``.
 +
 * Test de werking:
-+
-[source,lang=bash]
+```
 ----
 $ ansible -m win_ping --ask-pass windows
 ----
@@ -42,7 +40,7 @@ windows | SUCCESS => {
     "ping": "pong"
 }
 ----
-+
+```
 TIP: Waar je voor Linux de module ``ping`` zou gebruiken, moet je voor Windows de module ``win_ping`` gebruiken. De werking is verder hetzelfde.
 
 
@@ -61,9 +59,7 @@ Om bestanden te kopieëren gebruik je de ``win_copy`` module.
 
 * Maak een testfile ``foo.txt`` en zet er een test string in
 * Maak een nieuw playbook: ``windows.yml`` en voeg een task toe om de file te kopieeren naar de VM
-+
-[source,role=copypaste]
-----
+```
 ---
 - hosts: windows
 
@@ -75,24 +71,21 @@ Om bestanden te kopieëren gebruik je de ``win_copy`` module.
       dest: 'C:\workshop\'
       backup: yes
 ----
-+
+```
 TIP: De directory ``C:\workshop`` bestaat waarschijnlijk nog niet. In de handleiding van de ``win_copy`` module (https://docs.ansible.com/ansible/latest/modules/win_copy_module.html#win-copy-module) is terug te lezen dat ``win_copy`` deze directory automatisch aan zal maken als deze nog niet bestaat.
 +
 NOTE: Eerder in de workshop gebruikte we ``"`` om aan te geven dat een waarde een string is. De backslash (``\``) is echter een special character, waardoor deze verkeerd wordt geïnterpreteerd. Gebruik daarom een enkele qoute ``'`` voor Windows paden. Of ``\\`` met double quotes.
 +
 * Voer je playbook uit:
-+
-[source,lang=bash]
-----
+```
 $ ansible-playbook windows.yml --ask-pass
-----
+```
 +
 * Controleer op je Windows VM het resultaat:
-+ 
-[source,lang=dos]
+```
 ----
 > type c:\workshop\foo.txt
-----
+```
 
 ### Task 11.3: Host file bewerken
 
@@ -101,8 +94,7 @@ Als je al eens in Windows de host file aan hebt moeten passen, dan weet je dat d
 Ansible heeft voor de hostfile een module: ``win_hosts``. Het bewerken van een hostfile was nog nooit zo makkelijk!
 
 * Voeg toe aan je playbook:
-+
-[source,role=copypaste]
+```
 ----
   - name: Add 1.2.3.4 as an A record for www.example.com
     win_hosts:
@@ -110,16 +102,15 @@ Ansible heeft voor de hostfile een module: ``win_hosts``. Het bewerken van een h
       canonical_name: www.example.com
       ip_address: 1.2.3.4
 ----
-+
+```
 * Voer je playbook uit en controleer het resultaat op je Windows VM:
-+
-[source,lang=dos]
+```
 ----
 > type c:\windows\system32\drivers\etc\hosts
 1.2.3.4 www.example.com
 > ping www.example.com
 Pinging www.example.com [1.2.3.4] with 32 bytes of data:
-----
+```
 
 ### Task 11.4: Registry aanpassen
 
@@ -128,8 +119,7 @@ In het register van Windows worden instellingen voor allerlei applicaties opgesl
 We gaan een willekeurige wallpaper downloaden en deze installeren als bureaublad achtergrond.
 
 * Voeg toe aan je playbook:
-+
-[source,role=copypaste]
+```
 ----
   - name: Download wallpaper to specified path
     win_get_url:
@@ -141,7 +131,7 @@ We gaan een willekeurige wallpaper downloaden en deze installeren als bureaublad
       path: HKCU:\Control Panel\Desktop
       name: WallPaper
       data: "{{ WORKAROUND_WALLPAPER }}"
-----
+```
 +
 * Voeg een variable toe voor het pad van de wallpaper: ``path_wallpaper: C:\workshop\wallpaper.jpg``. 
 +
