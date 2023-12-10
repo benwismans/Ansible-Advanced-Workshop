@@ -26,7 +26,6 @@ ansible_winrm_server_cert_validation=ignore
 ----
 ```
 TIP: Voor Windows dient de ``ansible_connection`` aangepast te worden naar winrm (Windows Remote Management). De WinRM module gebruikt SSL om de verbinding te beveiligen. Het SSL certificaat dient dan wel vertrouwd te worden. In een enterprise omgeving is meestal een PKI infrastructuur aanwezig, waardoor alleen het root certificaat geïnstalleerd hoeft te worden. Alle certificaten, ondertekend met dit root certificaat, worden daarmee automatisch vertrouwd. In deze workshop hebben we geen PKI. We schakelen daarom de verificatie uit met de variable ``ansible_winrm_server_cert_validation``.
-+
 * Test de werking:
 ```
 ----
@@ -75,12 +74,12 @@ Om bestanden te kopieëren gebruik je de ``win_copy`` module.
 TIP: De directory ``C:\workshop`` bestaat waarschijnlijk nog niet. In de handleiding van de ``win_copy`` module (https://docs.ansible.com/ansible/latest/modules/win_copy_module.html#win-copy-module) is terug te lezen dat ``win_copy`` deze directory automatisch aan zal maken als deze nog niet bestaat.
 +
 NOTE: Eerder in de workshop gebruikte we ``"`` om aan te geven dat een waarde een string is. De backslash (``\``) is echter een special character, waardoor deze verkeerd wordt geïnterpreteerd. Gebruik daarom een enkele qoute ``'`` voor Windows paden. Of ``\\`` met double quotes.
-+
+
 * Voer je playbook uit:
 ```
 $ ansible-playbook windows.yml --ask-pass
 ```
-+
+
 * Controleer op je Windows VM het resultaat:
 ```
 ----
@@ -132,13 +131,13 @@ We gaan een willekeurige wallpaper downloaden en deze installeren als bureaublad
       name: WallPaper
       data: "{{ WORKAROUND_WALLPAPER }}"
 ```
-+
+
 * Voeg een variable toe voor het pad van de wallpaper: ``path_wallpaper: C:\workshop\wallpaper.jpg``. 
-+
+
 TIP: Kijk terug in Lab 6 (Role - HAProxy) hoe je variablen toevoegt aan je playbook.
-+
+
 * Voer het playbook uit en controleer of de achtergrond gewijzigd is.
-+
+
 NOTE: Log uit en opnieuw in op je Windows VM om de wijziging actief te maken
-+
+
 
