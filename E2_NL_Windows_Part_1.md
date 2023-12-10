@@ -135,7 +135,7 @@ We gaan een willekeurige wallpaper downloaden en deze installeren als bureaublad
 +
 * Voeg een variable toe voor het pad van de wallpaper: ``path_wallpaper: C:\workshop\wallpaper.jpg``. 
 +
-TIP: Kijk terug in link:06_NL_role_haproxy[Lab 6 Role - HAProxy] hoe je variablen toevoegt aan je playbook.
+TIP: Kijk terug in Lab 6 (Role - HAProxy) hoe je variablen toevoegt aan je playbook.
 +
 * Voer het playbook uit en controleer of de achtergrond gewijzigd is.
 +
