@@ -101,7 +101,7 @@ Ansible heeft voor de hostfile een module: ``win_hosts``. Het bewerken van een h
       state: present
       canonical_name: www.example.com
       ip_address: 1.2.3.4
-----
+
 ```
 * Voer je playbook uit en controleer het resultaat op je Windows VM:
 ```
