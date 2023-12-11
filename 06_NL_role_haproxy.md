@@ -59,7 +59,7 @@ Een beschrijving van de onderdelen van een role vind je terug in de documentatie
   vars:
     haproxy_backend_servers:
     - name: web1
-      address: {<hostname2>:80
+      address: <hostname2>:80
     - name: web2
       address: <hostname3>:80
 
