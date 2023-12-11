@@ -1,5 +1,10 @@
 ## Extra - Windows Part 1
 
+FIRST OP 001:
+pip install "pywinrm>=0.2.2"
+
+
+
 Ansible is niet alleen voor Linux. Je kunt er inmiddels ook prima Windows mee configureren. Ansible heeft veel kant-en-klare modules om Windows te configureren en beheren. Denk bijvoorbeeld aan het installeren van extra roles of features, installatie van MSI pakketten of aanpassen van de firewall. Natuurlijk zijn er ook modules voor basis taken, zoals files bewerken / kopieëren. Mocht er toch geen standaard module zijn voor je probleem, dan kun je altijd terugvallen op de modules ``win_command`` of ``win_psexec`` (voor Powershell commando's). Een overzicht van alle modules vind je terug op: https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html.
 
 De Windows VM in deze workshop is al voorbereid op Ansible. De handleiding voor het voorbereiden van Windows op Ansible vind je terug op: https://www.ansible.com/blog/connecting-to-a-windows-host.
