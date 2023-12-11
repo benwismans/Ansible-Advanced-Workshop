@@ -13,7 +13,7 @@ Met Ansible is het mogelijk om ``Rolling updates`` uit te voeren. Webservers ach
 **NOTE:** Met serial: 1 wordt er maar 1 host tegelijk uitgevoerd.
 
 * Zorg dat ``become`` is geconfigureerd.
-* Maak een task aan om ``status.html`` in /var/www/html/ te zetten. Gebruik de copy module (zie ``Task 5.2: Webpagina index.html installeren``)
+* Maak een task aan om ``status.html`` in /var/www/html/ te zetten. Gebruik de copy module (zie ``Task 5.2: Webpagina index.html installeren``). Let op dat je owner: apache en group: apache zet.
 * Zet de volgende content in de copy task:
 ```
 Status OK
