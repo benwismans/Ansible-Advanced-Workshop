@@ -52,6 +52,8 @@ Om de webservers daadwerkelijk wat te laten zien, maken we een index.html in de 
     copy:
       content: "This is server {{ ansible_fqdn }}"
       dest: "/var/www/html/index.html"
+      owner: apache
+      group: apache
 ```
 
 **TIP:** Ansible haalt ``facts`` op van elk systeem. Deze ``facts`` bevatten waardevolle variablen over de hosts. De module ``setup`` is verantwoordelijk voor deze ``facts``. Met een ``adhoc`` commando kun je deze facts eenvoudig inzien: ``ansible -m setup web1``. Zie https://docs.ansible.com/ansible/latest/modules/setup_module.html
