@@ -137,7 +137,7 @@ We gaan een willekeurige wallpaper downloaden en deze installeren als bureaublad
       data: "{{ wallpaper }}"
 ```
 
-* Voeg een variable toe voor het pad van de wallpaper: ``path_wallpaper: C:\workshop\wallpaper.jpg``. 
+* Voeg een variable toe voor het pad van de wallpaper: ``wallpaper: C:\workshop\wallpaper.jpg``. 
 
 TIP: Kijk terug in Lab 6 (Role - HAProxy) hoe je variablen toevoegt aan je playbook.
 
