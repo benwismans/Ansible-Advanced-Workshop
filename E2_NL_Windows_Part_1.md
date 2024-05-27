@@ -128,13 +128,13 @@ We gaan een willekeurige wallpaper downloaden en deze installeren als bureaublad
   - name: Download wallpaper to specified path
     win_get_url:
       url: https://images.pexels.com/photos/2536643/pexels-photo-2536643.jpeg
-      dest: "{{ WORKAROUND_WALLPAPER }}"
+      dest: "{{ wallpaper }}"
 
   - name: Ensure the wallpaper is configured
     win_regedit:
       path: HKCU:\Control Panel\Desktop
       name: WallPaper
-      data: "{{ WORKAROUND_WALLPAPER }}"
+      data: "{{ wallpaper }}"
 ```
 
 * Voeg een variable toe voor het pad van de wallpaper: ``path_wallpaper: C:\workshop\wallpaper.jpg``. 
