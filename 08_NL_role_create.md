@@ -2,7 +2,7 @@
 
 In Ansible is het een best-pratice om te werken met roles. Het is daarom goed om te weten hoe je zo'n role zelf kunt bouwen. In dit lab gaan we een role bouwen om ``chrony`` te configureren. 
 
-NOTE: In RHEL 7 / CentOS 7 is chrony de standaard daemon voor het network time protocol (NTP). Er zijn op internet genoeg artikelen te vinden die het verschil tussen chrone en ntpd uitleggen.
+NOTE: Vanaf RHEL 7 / CentOS 7 is chrony de standaard daemon voor het network time protocol (NTP) voor RHEL. Er zijn op internet genoeg artikelen te vinden die het verschil tussen chrony en ntpd uitleggen.
 
 Een role bestaat uit de volgende onderdelen (directories):
 
