@@ -23,7 +23,7 @@ In dit (extra) lab staan playbooks met fouten. Vind de fout en los het probleem 
   tasks:
   - name: "Ensure firewall is configured"
     firewalld:
-      service: "{{ WORKAROUND_ITEM }}"
+      service: "{{ SERVICE }}"
       permanent: yes
       immediate: yes
       state: enabled
