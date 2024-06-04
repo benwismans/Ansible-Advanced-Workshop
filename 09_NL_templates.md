@@ -12,7 +12,7 @@ We gaan de configfile van de role uit [Lab 8] ombouwen naar een template.
 ```
 $ cd ~/.ansible/roles/chrony
 ```
-* Vul de file ``defaults/main.yml`` met:
+* Vul de file ``defaults/main.yml`` aan met:
 ```
 ---
 ntp_servers:
